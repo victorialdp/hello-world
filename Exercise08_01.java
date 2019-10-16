@@ -9,8 +9,16 @@ public class Exercise08_01 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Enter a 3-by-4 matrix row by row");
-        double[][] m = next.
+		//declare matrix and set size 
+		double[][] m = new double[3][4];
+        System.out.println("Enter a "+m.length+" by "+m[0].length+" matrix row by row");
+        
+		//for loop to collect matrix
+		for (int i=0; i<m.length;i++) {
+			for (int j=0; j<m[0].length;j++) {
+				m[i][j] = input.nextDouble();
+			}
+		}
         
         System.out.println("Sum of elements at column 0 is "+sumColumn(m, 0));
         System.out.println("Sum of elements at column 1 is "+sumColumn(m, 1));
@@ -18,9 +26,13 @@ public class Exercise08_01 {
         System.out.println("Sum of elements at column 3 is "+sumColumn(m, 3));
         
     }
-    
+	
     public static double sumColumn(double[][] m, int columnIndex) {
-        return sum.column(columnIndex);
-        
+        double total = 0;
+		for (int i = 0; i <m.length; i++) {
+			total += m[i][columnIndex];
+		}
+		
+		return total;
     }
 }
